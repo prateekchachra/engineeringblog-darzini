@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# engineeringblog.darzini.com
 
-## Getting Started
+Engineering profile and blog for Prateek Chachra — a standalone [Next.js](https://nextjs.org) app,
+deployed separately from the main [darzini.com](https://www.darzini.com) site.
 
-First, run the development server:
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Profile content lives in one place — [`app/data/profile.ts`](app/data/profile.ts). Edit that file to
+update roles, metrics, skills, open-source links, education and languages. `app/page.tsx` only
+handles layout.
 
-## Learn More
+The downloadable résumé is [`public/Prateek-Chachra-Resume.pdf`](public/Prateek-Chachra-Resume.pdf).
+Replace that file to publish a new version; the download button picks it up automatically.
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Deploy as its own Vercel project, then point the subdomain at it:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Import this repo into Vercel as a new project.
+2. In **Project → Settings → Domains**, add `engineeringblog.darzini.com`.
+3. At the registrar holding `darzini.com` DNS, add the `CNAME` record Vercel shows
+   (host `engineeringblog`, value `cname.vercel-dns.com`).
+4. Wait for DNS to propagate and for Vercel to issue the TLS certificate.
 
-## Deploy on Vercel
+## Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Next.js 16 (App Router, Turbopack) · React 19 · TypeScript · Tailwind CSS v4
