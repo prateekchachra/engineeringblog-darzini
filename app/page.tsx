@@ -1,7 +1,9 @@
+import AudioEffectsLogo from "./components/AudioEffectsLogo";
 import {
   profile,
   metrics,
   roles,
+  featuredProject,
   projects,
   skills,
   openSource,
@@ -74,6 +76,20 @@ export default function Home() {
             pinpoints bugs to the exact line, on apps for enterprise clients including{" "}
             <strong className="text-foreground font-medium">Pfizer</strong> and{" "}
             <strong className="text-foreground font-medium">Moderna</strong>.
+          </p>
+          <p className="text-base sm:text-lg text-muted leading-relaxed max-w-2xl mb-4">
+            Right now I&apos;m building{" "}
+            <a
+              href={featuredProject.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground underline decoration-accent/40 underline-offset-4 hover:decoration-accent transition-colors"
+            >
+              react-native-audio-effects
+            </a>{" "}
+            — a TurboModule bringing real-time DSP and plugin-style controls to React
+            Native&apos;s New Architecture, with 17 effects and 7 generators running on
+            AudioKit and Oboe.
           </p>
           <p className="text-base sm:text-lg text-muted leading-relaxed max-w-2xl mb-9">
             I&apos;m also an independent artist —{" "}
@@ -187,6 +203,93 @@ export default function Home() {
         {/* Projects */}
         <section id="projects" className="scroll-mt-20 mb-20">
           <SectionHeading index="02" title="Personal projects" />
+
+          {/* Featured — the one currently in active development. */}
+          <article className="relative bg-gradient-to-br from-surface-2 to-surface border border-accent-3/40 rounded-2xl p-6 sm:p-8 mb-5 overflow-hidden">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -top-24 -right-24 w-72 h-72 rounded-full bg-accent-3/15 blur-3xl"
+            />
+
+            <div className="relative">
+              <div className="flex flex-wrap items-center gap-3 mb-6">
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/15 border border-accent/40 text-accent text-xs font-medium">
+                  <span className="relative flex w-1.5 h-1.5">
+                    <span className="absolute inline-flex w-full h-full rounded-full bg-accent opacity-75 animate-ping" />
+                    <span className="relative inline-flex w-1.5 h-1.5 rounded-full bg-accent" />
+                  </span>
+                  {featuredProject.status}
+                </span>
+                {featuredProject.version && (
+                  <span className="font-mono text-[11px] text-faint">
+                    {featuredProject.version}
+                  </span>
+                )}
+              </div>
+
+              <AudioEffectsLogo className="w-full max-w-[320px] h-auto text-foreground mb-6" />
+
+              <p className="text-base sm:text-lg text-foreground font-medium mb-3">
+                {featuredProject.tagline}
+              </p>
+              <p className="text-sm sm:text-base text-muted leading-relaxed mb-6 max-w-2xl">
+                {featuredProject.summary}
+              </p>
+
+              <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3 mb-6">
+                {featuredProject.highlights.map((h) => (
+                  <li key={h} className="flex gap-2.5 text-sm text-muted leading-relaxed">
+                    <span className="text-accent/60 mt-[7px] shrink-0 w-1 h-1 rounded-full bg-current" />
+                    <span>{h}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex flex-wrap gap-1.5 mb-6">
+                {featuredProject.stack.map((s) => (
+                  <span
+                    key={s}
+                    className="font-mono text-[11px] px-2 py-0.5 rounded border border-edge bg-surface-2 text-faint"
+                  >
+                    {s}
+                  </span>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href={featuredProject.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-accent to-accent-2 text-white font-medium text-sm hover:opacity-90 transition-opacity"
+                >
+                  <GitHubIcon />
+                  View on GitHub
+                </a>
+                {featuredProject.docsUrl && (
+                  <a
+                    href={featuredProject.docsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-surface border border-edge text-foreground font-medium text-sm hover:bg-surface-2 transition-colors"
+                  >
+                    API reference
+                  </a>
+                )}
+                {featuredProject.npmUrl && (
+                  <a
+                    href={featuredProject.npmUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-surface border border-edge text-foreground font-medium text-sm hover:bg-surface-2 transition-colors"
+                  >
+                    npm
+                  </a>
+                )}
+              </div>
+            </div>
+          </article>
+
           <div className="space-y-5">
             {projects.map((project) => (
               <article

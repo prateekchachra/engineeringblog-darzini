@@ -167,28 +167,48 @@ export type Project = {
   name: string;
   repo: string;
   url: string;
+  docsUrl?: string;
+  npmUrl?: string;
+  status?: string;
+  version?: string;
   tagline: string;
   summary: string;
   highlights: string[];
   stack: string[];
 };
 
+/** The one I'm actively building — rendered as a larger card with the logo. */
+export const featuredProject: Project = {
+  name: "react-native-audio-effects",
+  repo: "prateekchachra/react-native-audio-effects",
+  url: "https://github.com/prateekchachra/react-native-audio-effects",
+  docsUrl:
+    "https://github.com/prateekchachra/react-native-audio-effects/blob/main/docs/API.md",
+  npmUrl: "https://www.npmjs.com/package/react-native-audio-effects",
+  status: "Currently building",
+  version: "v1.0.1 on npm · v2 in development",
+  tagline: "Real-time audio effects, generators and plugin-style controls for React Native",
+  summary:
+    "A native audio library for React Native's New Architecture. Load a sound, build an effect chain, and tweak it while it plays — with controls generated from the same parameter definitions the DSP reads, so a knob can never disagree with the effect behind it.",
+  highlights: [
+    "17 real-time effects — delay, reverb, chorus, flanger, phaser, tremolo, compressor, limiter, noise gate, 4-band parametric EQ, low/high/band-pass filters, gain, pan, distortion and bit crusher, chained in the order you add them.",
+    "7 generators — sine, square, saw, triangle and white/pink/brown noise, each with an ADSR envelope, plus a PolySynth that gets chords and unison from a pool of sources rather than a native voice pool.",
+    "A control kit built for audio: rotary knobs, taper-aware sliders, XY pads, level meters, a waveform view with scrub-to-seek, an 88-key MIDI keyboard, A/B preset compare, and an effect rack that lays itself out from the schema.",
+    "Knob drags run on the UI thread through a Gesture Handler worklet, so a control keeps tracking your finger even while JS is busy decoding a file.",
+    "TurboModule on RN 0.88 — Swift and AudioKit on iOS, Kotlin and Klarinet (Oboe) on Android — working around AudioKit's SPM-only distribution and a Kotlin metadata clash on Android.",
+    "Controls ship from a separate entry point, so an app using only the audio API never pulls in Reanimated, Gesture Handler or SVG.",
+  ],
+  stack: [
+    "TurboModule",
+    "Swift / AudioKit",
+    "Kotlin / Oboe",
+    "C++",
+    "TypeScript",
+    "Reanimated",
+  ],
+};
+
 export const projects: Project[] = [
-  {
-    name: "react-native-audio-effects",
-    repo: "prateekchachra/react-native-audio-effects",
-    url: "https://github.com/prateekchachra/react-native-audio-effects",
-    tagline: "Real-time DSP and plugin-style controls for React Native",
-    summary:
-      "A native audio library for React Native's New Architecture: load a sound, build an effect chain, and tweak it while it plays. The UI controls are generated from the same parameter definitions the DSP reads, so a knob can never disagree with the effect behind it.",
-    highlights: [
-      "17 real-time effects — delay, reverb, chorus, flanger, phaser, tremolo, compressor, limiter, noise gate, 4-band parametric EQ, low/high/band-pass filters, gain, pan, distortion and bit crusher.",
-      "7 generators — sine, square, saw, triangle and white/pink/brown noise, each with an ADSR envelope and a playable keyboard.",
-      "A control kit built for audio: rotary knobs, taper-aware sliders, XY pads, level meters, a waveform view with scrub-to-seek, a MIDI keyboard, A/B preset compare, and an effect rack that builds itself from the schema.",
-      "Implemented as a TurboModule on RN 0.88 — Swift and AudioKit on iOS, Kotlin and Klarinet (Oboe) on Android — including working around AudioKit's SPM-only distribution and a Kotlin version clash on the Android side.",
-    ],
-    stack: ["TurboModule", "Swift / AudioKit", "Kotlin / Oboe", "C++", "TypeScript"],
-  },
   {
     name: "CueSync",
     repo: "prateekchachra/CueSync",
