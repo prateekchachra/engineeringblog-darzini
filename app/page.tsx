@@ -2,6 +2,7 @@ import {
   profile,
   metrics,
   roles,
+  projects,
   skills,
   openSource,
   education,
@@ -31,10 +32,13 @@ export default function Home() {
             <a href="#experience" className="hidden sm:inline text-muted hover:text-foreground transition-colors">
               Experience
             </a>
-            <a href="#skills" className="hidden sm:inline text-muted hover:text-foreground transition-colors">
+            <a href="#projects" className="hidden sm:inline text-muted hover:text-foreground transition-colors">
+              Projects
+            </a>
+            <a href="#skills" className="hidden md:inline text-muted hover:text-foreground transition-colors">
               Skills
             </a>
-            <a href="#open-source" className="hidden sm:inline text-muted hover:text-foreground transition-colors">
+            <a href="#open-source" className="hidden md:inline text-muted hover:text-foreground transition-colors">
               Open source
             </a>
             <a
@@ -180,9 +184,63 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Projects */}
+        <section id="projects" className="scroll-mt-20 mb-20">
+          <SectionHeading index="02" title="Personal projects" />
+          <div className="space-y-5">
+            {projects.map((project) => (
+              <article
+                key={project.repo}
+                className="bg-surface border border-edge rounded-xl p-6 hover:border-accent/40 transition-colors"
+              >
+                <div className="flex flex-wrap items-start justify-between gap-3 mb-2">
+                  <div className="min-w-0">
+                    <h3 className="font-mono text-base sm:text-lg text-foreground font-medium break-words">
+                      {project.name}
+                    </h3>
+                    <p className="text-sm text-accent mt-1">{project.tagline}</p>
+                  </div>
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-1.5 shrink-0 px-3 py-1.5 rounded-lg border border-edge bg-surface-2 text-xs font-medium text-muted hover:text-foreground hover:border-accent/40 transition-colors"
+                  >
+                    <GitHubIcon />
+                    View source
+                    <ArrowIcon />
+                  </a>
+                </div>
+
+                <p className="text-sm text-muted leading-relaxed mb-4">{project.summary}</p>
+
+                <ul className="space-y-2 mb-4">
+                  {project.highlights.map((h) => (
+                    <li key={h} className="flex gap-2.5 text-sm text-muted leading-relaxed">
+                      <span className="text-accent/50 mt-[7px] shrink-0 w-1 h-1 rounded-full bg-current" />
+                      <span>{h}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex flex-wrap gap-1.5">
+                  {project.stack.map((s) => (
+                    <span
+                      key={s}
+                      className="font-mono text-[11px] px-2 py-0.5 rounded border border-edge bg-surface-2 text-faint"
+                    >
+                      {s}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
         {/* Skills */}
         <section id="skills" className="scroll-mt-20 mb-20">
-          <SectionHeading index="02" title="Technical skills" />
+          <SectionHeading index="03" title="Technical skills" />
           <div className="grid sm:grid-cols-2 gap-4">
             {skills.map((group) => (
               <div
@@ -209,7 +267,7 @@ export default function Home() {
 
         {/* Open source */}
         <section id="open-source" className="scroll-mt-20 mb-20">
-          <SectionHeading index="03" title="Open source" />
+          <SectionHeading index="04" title="Open source" />
           <div className="space-y-3">
             {openSource.map((item) => (
               <a
@@ -233,7 +291,7 @@ export default function Home() {
 
         {/* Writing */}
         <section id="writing" className="scroll-mt-20 mb-20">
-          <SectionHeading index="04" title="Writing" />
+          <SectionHeading index="05" title="Writing" />
           <div className="bg-surface border border-dashed border-edge rounded-xl p-8 text-center">
             <p className="text-muted">
               Engineering posts are on the way — performance work, native modules, and
@@ -244,7 +302,7 @@ export default function Home() {
 
         {/* Education & languages */}
         <section className="mb-20">
-          <SectionHeading index="05" title="Education & languages" />
+          <SectionHeading index="06" title="Education & languages" />
           <div className="grid sm:grid-cols-2 gap-4">
             <div className="bg-surface border border-edge rounded-xl p-5">
               <h3 className="font-mono text-xs text-accent tracking-wider mb-3">EDUCATION</h3>

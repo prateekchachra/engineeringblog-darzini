@@ -163,6 +163,49 @@ export const skills = [
   },
 ];
 
+export type Project = {
+  name: string;
+  repo: string;
+  url: string;
+  tagline: string;
+  summary: string;
+  highlights: string[];
+  stack: string[];
+};
+
+export const projects: Project[] = [
+  {
+    name: "react-native-audio-effects",
+    repo: "prateekchachra/react-native-audio-effects",
+    url: "https://github.com/prateekchachra/react-native-audio-effects",
+    tagline: "Real-time DSP and plugin-style controls for React Native",
+    summary:
+      "A native audio library for React Native's New Architecture: load a sound, build an effect chain, and tweak it while it plays. The UI controls are generated from the same parameter definitions the DSP reads, so a knob can never disagree with the effect behind it.",
+    highlights: [
+      "17 real-time effects — delay, reverb, chorus, flanger, phaser, tremolo, compressor, limiter, noise gate, 4-band parametric EQ, low/high/band-pass filters, gain, pan, distortion and bit crusher.",
+      "7 generators — sine, square, saw, triangle and white/pink/brown noise, each with an ADSR envelope and a playable keyboard.",
+      "A control kit built for audio: rotary knobs, taper-aware sliders, XY pads, level meters, a waveform view with scrub-to-seek, a MIDI keyboard, A/B preset compare, and an effect rack that builds itself from the schema.",
+      "Implemented as a TurboModule on RN 0.88 — Swift and AudioKit on iOS, Kotlin and Klarinet (Oboe) on Android — including working around AudioKit's SPM-only distribution and a Kotlin version clash on the Android side.",
+    ],
+    stack: ["TurboModule", "Swift / AudioKit", "Kotlin / Oboe", "C++", "TypeScript"],
+  },
+  {
+    name: "CueSync",
+    repo: "prateekchachra/CueSync",
+    url: "https://github.com/prateekchachra/CueSync",
+    tagline: "Two-sided sync licensing app with an AI music supervisor",
+    summary:
+      "A sync licensing marketplace connecting musicians with music supervisors. Musicians keep a catalog with posters, platform links and sync-rights metadata; supervisors post briefs and review submissions anonymously. Built with Expo and Supabase.",
+    highlights: [
+      "Agentic sync search: a supervisor describes a scene and the agent returns a ranked, playable shortlist, running a tool loop over search_catalog, get_track, check_clearance and draft_license_request.",
+      "The agent runs server-side in a Supabase Edge Function that rejects non-supervisors, so no model API key ever ships inside the app bundle.",
+      "Provider-agnostic model layer — Gemini, Claude, or any OpenAI-compatible endpoint — behind one interface, with a CLI, an eval set and tests sharing a single copy of the agent code with the app.",
+      "Anonymous submissions (each musician appears as e.g. Artist 877C), role-locked auth, clearance checks on every pick, and silent blocking so supervisors can stop accepting without signalling it.",
+    ],
+    stack: ["React Native (Expo)", "Supabase", "PostgreSQL", "Edge Functions", "TypeScript"],
+  },
+];
+
 export const openSource = [
   {
     repo: "callstack/react-native-bottom-tabs",
