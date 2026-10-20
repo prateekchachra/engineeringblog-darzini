@@ -1,4 +1,6 @@
+import Link from "next/link";
 import AudioEffectsLogo from "./components/AudioEffectsLogo";
+import { posts } from "./data/posts";
 import {
   profile,
   metrics,
@@ -37,6 +39,9 @@ export default function Home() {
             <a href="#projects" className="hidden sm:inline text-muted hover:text-foreground transition-colors">
               Projects
             </a>
+            <Link href="/writing" className="text-muted hover:text-foreground transition-colors">
+              Writing
+            </Link>
             <a href="#skills" className="hidden md:inline text-muted hover:text-foreground transition-colors">
               Skills
             </a>
@@ -395,12 +400,32 @@ export default function Home() {
         {/* Writing */}
         <section id="writing" className="scroll-mt-20 mb-20">
           <SectionHeading index="05" title="Writing" />
-          <div className="bg-surface border border-dashed border-edge rounded-xl p-8 text-center">
-            <p className="text-muted">
-              Engineering posts are on the way — performance work, native modules, and
-              observability in React Native.
-            </p>
+          <div className="space-y-3">
+            {posts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/writing/${post.slug}`}
+                className="group block bg-surface border border-edge rounded-xl p-5 hover:border-accent/40 transition-colors"
+              >
+                <div className="flex flex-wrap items-center gap-3 mb-2 font-mono text-xs text-faint">
+                  <time dateTime={post.date}>{post.dateLabel}</time>
+                  <span>·</span>
+                  <span>{post.readingTime}</span>
+                </div>
+                <h3 className="text-base sm:text-lg font-semibold text-foreground group-hover:text-accent transition-colors leading-snug mb-1.5">
+                  {post.title}
+                </h3>
+                <p className="text-sm text-muted leading-relaxed">{post.excerpt}</p>
+              </Link>
+            ))}
           </div>
+          <Link
+            href="/writing"
+            className="inline-flex items-center gap-1.5 mt-4 text-sm text-muted hover:text-accent transition-colors"
+          >
+            All writing
+            <ArrowIcon />
+          </Link>
         </section>
 
         {/* Education & languages */}
