@@ -17,7 +17,7 @@ const siteUrl = "https://engineeringblog.darzini.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Prateek Chachra — Senior Software Engineer",
+    default: "Prateek Chachra, Senior Software Engineer",
     template: "%s · Prateek Chachra",
   },
   description:
@@ -37,14 +37,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: siteUrl,
-    siteName: "Prateek Chachra — Engineering",
-    title: "Prateek Chachra — Senior Software Engineer",
+    siteName: "Prateek Chachra, Engineering",
+    title: "Prateek Chachra, Senior Software Engineer",
     description:
       "10+ years in React Native, React and TypeScript. Cut app startup from 608 ms to 127 ms; built Datadog tracing that pinpoints bugs to the exact line.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Prateek Chachra — Senior Software Engineer",
+    title: "Prateek Chachra, Senior Software Engineer",
     description:
       "10+ years in React Native, React and TypeScript. Performance, observability and mobile architecture.",
   },

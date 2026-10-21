@@ -14,7 +14,7 @@ export type Post = {
 export const posts: Post[] = [
   {
     slug: "sample-search-in-plain-english",
-    title: "Finding samples in plain English — and why the model is the easy part",
+    title: "Finding samples in plain English, and why the model is the easy part",
     excerpt:
       "Splice just shipped an MCP server that lets Claude search their catalog. I was building the same idea into a React Native audio library at the same time, without an API key. The language model turned out to be the least interesting part of it.",
     date: "2026-10-20",

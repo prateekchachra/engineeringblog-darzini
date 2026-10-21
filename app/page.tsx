@@ -71,13 +71,13 @@ export default function Home() {
             {profile.name}
           </h1>
           <p className="text-xl sm:text-2xl text-muted mb-6">
-            {profile.role} —{" "}
+            {profile.role}, {" "}
             <span className="accent-text font-semibold">{profile.stack.join(" · ")}</span>
           </p>
 
           <p className="text-base sm:text-lg text-muted leading-relaxed max-w-2xl mb-4">
             Senior engineer with 10+ years in React Native, React and TypeScript. I cut app
-            startup time by 79% — from 608 ms to 127 ms — and built Datadog tracing that
+            startup time by 79% (from 608 ms to 127 ms) and built Datadog tracing that
             pinpoints bugs to the exact line, on apps for enterprise clients including{" "}
             <strong className="text-foreground font-medium">Pfizer</strong> and{" "}
             <strong className="text-foreground font-medium">Moderna</strong>.
@@ -92,12 +92,12 @@ export default function Home() {
             >
               react-native-audio-effects
             </a>{" "}
-            — a TurboModule bringing real-time DSP and plugin-style controls to React
+            , a TurboModule bringing real-time DSP and plugin-style controls to React
             Native&apos;s New Architecture, with 17 effects and 7 generators running on
             AudioKit and Oboe.
           </p>
           <p className="text-base sm:text-lg text-muted leading-relaxed max-w-2xl mb-9">
-            I&apos;m also an independent artist —{" "}
+            I&apos;m also an independent artist,{" "}
             <a
               href={profile.links.music}
               target="_blank"
@@ -106,7 +106,7 @@ export default function Home() {
             >
               Darzini
             </a>{" "}
-            — releasing music independently, and a speaker at Primavera Pro 2026 on AI and
+            , releasing music independently, and a speaker at Primavera Pro 2026 on AI and
             music. Based in Madrid, relocating to Amsterdam; requires visa sponsorship.
           </p>
 
@@ -209,7 +209,7 @@ export default function Home() {
         <section id="projects" className="scroll-mt-20 mb-20">
           <SectionHeading index="02" title="Personal projects" />
 
-          {/* Featured — the one currently in active development. */}
+          {/* Featured: the one currently in active development. */}
           <article className="relative bg-gradient-to-br from-surface-2 to-surface border border-accent-3/40 rounded-2xl p-6 sm:p-8 mb-5 overflow-hidden">
             <div
               aria-hidden="true"
@@ -457,7 +457,7 @@ export default function Home() {
           <div className="bg-gradient-to-br from-surface-2 to-surface border border-accent/25 rounded-xl p-8 text-center">
             <h2 className="text-2xl font-semibold mb-2">Let&apos;s build something</h2>
             <p className="text-muted mb-6 max-w-lg mx-auto text-sm sm:text-base">
-              Open to senior and lead engineering roles. The full résumé has the detail —
+              Open to senior and lead engineering roles. The full résumé has the detail,
               or just send me a note.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
