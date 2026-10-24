@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { posts } from "../data/posts";
+import ThemeToggle from "../components/ThemeToggle";
 
 export const metadata: Metadata = {
   title: "Writing",
@@ -19,9 +20,12 @@ export default function WritingIndex() {
           >
             prateek<span className="text-accent">.</span>chachra
           </Link>
-          <Link href="/" className="text-sm text-muted hover:text-foreground transition-colors">
-            ← Home
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link href="/" className="text-sm text-muted hover:text-foreground transition-colors">
+              ← Home
+            </Link>
+            <ThemeToggle />
+          </div>
         </div>
       </header>
 

@@ -38,7 +38,7 @@ export async function renderCard({
           alignItems: "center",
           gap: 56,
           padding: "0 72px",
-          background: "#07050f",
+          background: "#130e1e",
           fontFamily: "sans-serif",
           position: "relative",
         }}
@@ -51,7 +51,7 @@ export async function renderCard({
             top: 0,
             width: 8,
             height: "100%",
-            background: "linear-gradient(180deg, #eb3678, #fb773c)",
+            background: "linear-gradient(180deg, #ff7a5c, #ffb347)",
           }}
         />
 
@@ -61,7 +61,7 @@ export async function renderCard({
               fontSize: 17,
               fontWeight: 700,
               letterSpacing: 2.6,
-              color: "#eb3678",
+              color: "#ff7a5c",
               marginBottom: 26,
             }}
           >
@@ -72,14 +72,14 @@ export async function renderCard({
               fontSize: 54,
               lineHeight: 1.14,
               fontWeight: 700,
-              color: "#f4f1fa",
+              color: "#f7f0e8",
               letterSpacing: -0.8,
               marginBottom: 30,
             }}
           >
             {title}
           </div>
-          <div style={{ fontSize: 23, color: "#a79fbd", display: "flex" }}>{byline}</div>
+          <div style={{ fontSize: 23, color: "#b6a8bf", display: "flex" }}>{byline}</div>
         </div>
 
         <img
@@ -91,7 +91,7 @@ export async function renderCard({
             height: 332,
             objectFit: "cover",
             borderRadius: 28,
-            border: "3px solid rgba(235,54,120,0.55)",
+            border: "3px solid rgba(255,122,92,0.55)",
           }}
         />
       </div>

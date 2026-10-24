@@ -1,5 +1,6 @@
 import Link from "next/link";
 import AudioEffectsLogo from "./components/AudioEffectsLogo";
+import ThemeToggle from "./components/ThemeToggle";
 import { posts } from "./data/posts";
 import {
   profile,
@@ -57,6 +58,7 @@ export default function Home() {
               <GitHubIcon />
               <span className="hidden sm:inline">GitHub</span>
             </a>
+            <ThemeToggle />
           </nav>
         </div>
       </header>

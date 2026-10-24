@@ -1,16 +1,79 @@
 @import "tailwindcss";
 
+/**
+ * Two palettes.
+ *
+ * Light is a summer afternoon: sun bleached paper, deep sea ink, coral and
+ * citrus. Dark is the sunset that follows: a dusk violet sky with the warm end
+ * of the same spectrum still sitting on the horizon. They share a hue family,
+ * so the toggle reads as the same place at a different hour rather than as two
+ * different sites.
+ *
+ * An explicit data-theme always beats the system preference, because it only
+ * exists once the reader has actually chosen.
+ */
+
 :root {
-  --background: #07050f;
-  --surface: #120c22;
-  --surface-2: #1a0f2e;
-  --border: #2d1b4e;
-  --foreground: #f4f1fa;
-  --muted: #a79fbd;
-  --faint: #6f6788;
-  --accent: #eb3678;
-  --accent-2: #fb773c;
-  --accent-3: #7c4dff;
+  color-scheme: light;
+
+  --background: #fffdf8;
+  --surface: #fff8ed;
+  --surface-2: #ffefdc;
+  --border: #f0dfc6;
+
+  --foreground: #1d2b33;
+  --muted: #55656e;
+  --faint: #86949c;
+
+  --accent: #c44517;
+  --accent-2: #a96300;
+  --accent-3: #0d9488;
+
+  /* Backdrop wash and grid, tinted to the palette instead of a fixed purple. */
+  --glow: rgba(13, 148, 136, 0.13);
+  --grid-line: rgba(29, 43, 51, 0.07);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --background: #130e1e;
+    --surface: #1d1630;
+    --surface-2: #271d3f;
+    --border: #37294f;
+
+    --foreground: #f7f0e8;
+    --muted: #b6a8bf;
+    --faint: #857896;
+
+    --accent: #ff7a5c;
+    --accent-2: #ffb347;
+    --accent-3: #a855f7;
+
+    --glow: rgba(255, 122, 92, 0.16);
+    --grid-line: rgba(255, 179, 71, 0.07);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --background: #130e1e;
+  --surface: #1d1630;
+  --surface-2: #271d3f;
+  --border: #37294f;
+
+  --foreground: #f7f0e8;
+  --muted: #b6a8bf;
+  --faint: #857896;
+
+  --accent: #ff7a5c;
+  --accent-2: #ffb347;
+  --accent-3: #a855f7;
+
+  --glow: rgba(255, 122, 92, 0.16);
+  --grid-line: rgba(255, 179, 71, 0.07);
 }
 
 @theme inline {
@@ -37,19 +100,66 @@ body {
   color: var(--foreground);
   font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-/* Subtle grid backdrop, kept behind all content. */
+/* Surfaces and rules follow the palette without every element animating. */
+header,
+section,
+article,
+table,
+td,
+th,
+a,
+h1,
+h2,
+h3,
+p {
+  transition: background-color 0.25s ease, border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  body,
+  header,
+  section,
+  article,
+  table,
+  td,
+  th,
+  a,
+  h1,
+  h2,
+  h3,
+  p {
+    transition: none;
+  }
+}
+
+/* Subtle grid, behind everything. */
 .grid-backdrop::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: -2;
   background-image:
-    linear-gradient(to right, rgba(124, 77, 255, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(124, 77, 255, 0.07) 1px, transparent 1px);
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+}
+
+/* Warm bloom across the top of the page, strongest at sunset. */
+.grid-backdrop::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 70% 45% at 50% 0%, var(--glow), transparent 70%);
 }
 
 .accent-text {

@@ -50,13 +50,25 @@ export const metadata: Metadata = {
   },
 };
 
+/**
+ * Applies the saved theme before first paint.
+ *
+ * Without this the page renders at the system preference and then snaps to the
+ * stored choice once React hydrates, which is a visible flash on every single
+ * navigation. Kept tiny and dependency free because it blocks rendering.
+ */
+const themeScript = `(function(){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);}}catch(e){}})();`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} grid-backdrop antialiased`}
       >

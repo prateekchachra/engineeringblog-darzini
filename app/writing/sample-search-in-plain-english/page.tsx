@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getPost } from "../../data/posts";
 import { profile } from "../../data/profile";
+import ThemeToggle from "../../components/ThemeToggle";
 import {
   A,
   Callout,
@@ -40,12 +41,15 @@ export default function Page() {
           >
             prateek<span className="text-accent">.</span>chachra
           </Link>
-          <Link
-            href="/writing"
-            className="text-sm text-muted hover:text-foreground transition-colors"
-          >
-            ← All writing
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/writing"
+              className="text-sm text-muted hover:text-foreground transition-colors"
+            >
+              ← All writing
+            </Link>
+            <ThemeToggle />
+          </div>
         </div>
       </header>
 
