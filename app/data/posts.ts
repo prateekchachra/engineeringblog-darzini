@@ -13,6 +13,16 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "what-audio-effects-actually-do",
+    title: "What audio effects actually do, and what you could build with them",
+    excerpt:
+      "Reverb, delay, chorus, compression. You have heard all of them thousands of times without knowing the names. Here is what each one is really doing, explained without the studio jargon, plus five things you could build on a phone with them.",
+    date: "2026-10-25",
+    dateLabel: "25 October 2026",
+    readingTime: "11 min read",
+    tags: ["Audio", "DSP", "React Native", "App ideas"],
+  },
+  {
     slug: "sample-search-in-plain-english",
     title: "Finding samples in plain English, and why the model is the easy part",
     excerpt:
