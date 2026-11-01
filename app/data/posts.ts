@@ -13,6 +13,16 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "which-oscillator-to-reach-for",
+    title: "Which oscillator to reach for, and the records that made each one famous",
+    excerpt:
+      "Sine, triangle, square, saw, noise. The difference between them is only which harmonics they contain, and that one fact decides which to pick. Plus the iconic sounds each one built, from the DX7 to the NES to acid house, and why a perfect sawtooth is impossible on a computer.",
+    date: "2026-11-01",
+    dateLabel: "1 November 2026",
+    readingTime: "12 min read",
+    tags: ["Audio", "Synthesis", "DSP", "Sound design"],
+  },
+  {
     slug: "what-audio-effects-actually-do",
     title: "What audio effects actually do, and what you could build with them",
     excerpt:
