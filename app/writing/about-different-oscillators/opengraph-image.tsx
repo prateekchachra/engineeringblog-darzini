@@ -1,7 +1,7 @@
 import { OG_CONTENT_TYPE, OG_SIZE, renderCard } from "../../og";
 import { getPost } from "../../data/posts";
 
-const post = getPost("which-oscillator-to-reach-for")!;
+const post = getPost("about-different-oscillators")!;
 
 export const alt = post.title;
 export const size = OG_SIZE;

@@ -16,7 +16,7 @@ import {
   UL,
 } from "../../components/Prose";
 
-const post = getPost("which-oscillator-to-reach-for")!;
+const post = getPost("about-different-oscillators")!;
 const repo = "https://github.com/prateekchachra/react-native-audio-effects";
 
 export const metadata: Metadata = {
@@ -84,7 +84,7 @@ export default function Page() {
         </Lead>
 
         <P>
-          So this is what each one is, when to reach for it, and where you have already heard
+          So this is what each one is, when to use it, and where you have already heard
           it. The last part is the fun part, because some of the most recognisable sounds ever
           recorded are one bare waveform doing almost nothing clever.
         </P>
@@ -164,7 +164,7 @@ export default function Page() {
           training. There are no overtones to give an answer away.
         </P>
 
-        <H3>Where you have heard it</H3>
+        <H3>Where you hear it</H3>
 
         <P>
           The Yamaha DX7, which is as close to the sound of the nineteen eighties as one
@@ -194,13 +194,13 @@ export default function Page() {
           one.
         </P>
         <P>
-          I reach for it when a sine is too polite to be heard but a square is too rude.
+          I use it when a sine is too polite to be heard but a square is too rude.
           Gentle leads, bell tones, anything that has to sit in a mix without fighting. It is
           also the safest waveform for something that will be played loudly through a small
           speaker, because there is not enough high harmonic content to turn harsh.
         </P>
 
-        <H3>Where you have heard it</H3>
+        <H3>Where you hear it</H3>
 
         <P>
           On the NES, the triangle channel played the bass. The chip had five channels: two
@@ -235,7 +235,7 @@ export default function Page() {
           synthetic on purpose.
         </P>
 
-        <H3>Where you have heard it</H3>
+        <H3>Where you hear it</H3>
 
         <P>
           Those two NES pulse channels carried every melody and harmony you remember. And the
@@ -265,7 +265,7 @@ export default function Page() {
           are almost never one saw. They are several, slightly out of tune with each other.
         </P>
 
-        <H3>Where you have heard it</H3>
+        <H3>Where you hear it</H3>
 
         <P>
           The Roland JP-8000 shipped a waveform called Supersaw, which is{" "}
@@ -349,7 +349,7 @@ export default function Page() {
           </LI>
         </UL>
 
-        <H3>Where you have heard it</H3>
+        <H3>Where you hear it</H3>
 
         <P>
           The NES noise channel did every drum, every explosion, every footstep. Four
