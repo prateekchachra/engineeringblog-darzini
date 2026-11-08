@@ -13,6 +13,16 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "about-formants",
+    title: "About formants, and why every voice has a signature",
+    excerpt:
+      "You can recognise a friend from one word on a bad phone line. Not from pitch, not from volume. Your voice is a buzzer and a tube, and almost everything that makes it yours is the tube. Why helium works, why speeding up a tape makes a chipmunk, and how to pull the two apart in code.",
+    date: "2026-11-08",
+    dateLabel: "8 November 2026",
+    readingTime: "13 min read",
+    tags: ["Audio", "Voice", "DSP", "React Native"],
+  },
+  {
     slug: "about-different-oscillators",
     title: "About different oscillators, and where you hear them",
     excerpt:
