@@ -13,6 +13,16 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "writing-down-what-warmer-means",
+    title: "Writing down what warmer means, so an agent can do sound design",
+    excerpt:
+      "Can you make it warmer is the most common sentence in a studio and nobody who says it can define it. Every sound word points at three different mechanisms, and if you pick the wrong one your code does something defensible and wrong. How sound design actually works, and the skill file I wrote so I would stop solving it from scratch.",
+    date: "2026-11-09",
+    dateLabel: "9 November 2026",
+    readingTime: "14 min read",
+    tags: ["Sound design", "Audio", "Agents", "DSP"],
+  },
+  {
     slug: "about-formants",
     title: "About formants, and why every voice has a signature",
     excerpt:
