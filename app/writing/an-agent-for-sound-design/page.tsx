@@ -16,7 +16,7 @@ import {
   UL,
 } from "../../components/Prose";
 
-const post = getPost("writing-down-what-warmer-means")!;
+const post = getPost("an-agent-for-sound-design")!;
 const repo = "https://github.com/prateekchachra/react-native-audio-effects";
 
 export const metadata: Metadata = {

@@ -1,7 +1,7 @@
 import { OG_CONTENT_TYPE, OG_SIZE, renderCard } from "../../og";
 import { getPost } from "../../data/posts";
 
-const post = getPost("writing-down-what-warmer-means")!;
+const post = getPost("an-agent-for-sound-design")!;
 
 export const alt = post.title;
 export const size = OG_SIZE;
