@@ -1,5 +1,6 @@
 import Link from "next/link";
 import AudioEffectsLogo from "./components/AudioEffectsLogo";
+import ChordSynth from "./components/ChordSynth";
 import ThemeToggle from "./components/ThemeToggle";
 import { posts } from "./data/posts";
 import {
@@ -158,6 +159,9 @@ export default function Home() {
             </div>
           ))}
         </section>
+
+        {/* The synth. Unnumbered on purpose: it is a toy, not a section. */}
+        <ChordSynth />
 
         {/* Experience */}
         <section id="experience" className="scroll-mt-20 mb-20">
