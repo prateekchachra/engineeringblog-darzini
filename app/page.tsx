@@ -11,6 +11,7 @@ import {
   projects,
   skills,
   openSource,
+  talks,
   education,
   languages,
 } from "./data/profile";
@@ -381,7 +382,7 @@ export default function Home() {
 
         {/* Open source */}
         <section id="open-source" className="scroll-mt-20 mb-20">
-          <SectionHeading index="04" title="Open source" />
+          <SectionHeading index="04" title="Open source & speaking" />
           <div className="space-y-3">
             {openSource.map((item) => (
               <a
@@ -399,6 +400,21 @@ export default function Home() {
                 </div>
                 <ArrowIcon />
               </a>
+            ))}
+
+            {talks.map((talk) => (
+              <div
+                key={`${talk.event}-${talk.year}`}
+                className="flex items-center justify-between gap-4 bg-surface border border-edge rounded-xl p-4"
+              >
+                <div className="min-w-0">
+                  <p className="font-mono text-sm text-foreground truncate">
+                    {talk.event} {talk.year}
+                    <span className="text-faint"> · {talk.location}</span>
+                  </p>
+                  <p className="text-sm text-faint mt-0.5">{talk.topic}</p>
+                </div>
+              </div>
             ))}
           </div>
         </section>

@@ -67,6 +67,7 @@ export const roles: Role[] = [
     stack: ["React Native", "GraphQL", "TypeScript", "Datadog", "Highcharts"],
     highlights: [
       "Cut app startup time from 608 ms to 127 ms (about 79%) through feature-flag caching, state invalidation and a dimension-filter fix.",
+      "Fixed a failure that had recurred four times at its root, with a backend data-validation test plus a frontend guard, rather than a quick fix that would have shown users wrong numbers.",
       "Part of an 8-person senior mobile core team building 3 React Native apps for enterprise clients including Pfizer and Moderna (~2,000 users), shipping security fixes on a deadline.",
       "Led architectural decisions (GraphQL schema design, SOLID, screaming architecture) for inter-domain communication, and added app-wide caching and failure handling that improved resilience and supported key enterprise sales.",
       "Set up Datadog end to end (tracing, logging, source maps, Session Replay, source code integration) through GitHub Actions, so the team could trace a broken step to the exact line of code.",
@@ -84,7 +85,7 @@ export const roles: Role[] = [
     highlights: [
       "Part of the team that migrated support from Intercom to Zendesk across 4 apps and tens of thousands of users in 4 months, integrating chat and subscription services.",
       "Owned the end-to-end native chat integration with Zendesk using Native Modules.",
-      "Bootstrapped and led the Taxfix Support Center in Next.js, with Auth0 authentication and Framer Motion.",
+      "Bootstrapped and led the Taxfix Support Center in Next.js, owning its Auth0 login and sharing one session with the main website, with Framer Motion.",
       "Contributed to the Design System by adding new components and tests (Atomic Design, Jest, Storybook), speeding up development by 80%.",
     ],
   },
@@ -104,9 +105,9 @@ export const roles: Role[] = [
     title: "Lead Mobile Engineer",
     location: "Bangalore",
     period: "Apr 2020 to Dec 2020",
-    stack: ["React Native", "Twilio", "Firebase"],
+    stack: ["React Native", "Agora", "Twilio", "Firebase"],
     highlights: [
-      "Led 2 developers to launch the AyuMitra iOS and Android app, with Twilio video calling and Firebase real-time messaging.",
+      "Led 2 developers to launch the AyuMitra iOS and Android app, with real-time video consultations (Agora, Twilio) and Firebase real-time messaging.",
     ],
   },
   {
@@ -114,10 +115,10 @@ export const roles: Role[] = [
     title: "MyScoot · Nucleus Software",
     location: "India",
     period: "2016 to 2020",
-    stack: ["Django", "React", "Firebase", "SPNEGO / SSO"],
+    stack: ["Django", "React", "Java", "Firebase", "SPNEGO / SSO"],
     highlights: [
-      "MyScoot (Full Stack, 2019 to 2020): Django/React website plus a mobile app with Firebase notifications and deep linking.",
-      "Nucleus Software (Senior Engineer, 2016 to 2018): 3x faster enterprise login via SPNEGO and REST-based SSO.",
+      "MyScoot (Full Stack, 2019 to 2020): Django/React website plus a mobile app with the PayTM payment gateway, Firebase notifications and deep linking.",
+      "Nucleus Software (Senior Engineer, 2016 to 2018, Java): 3x faster enterprise login via SPNEGO and REST-based SSO.",
     ],
   },
 ];
@@ -141,6 +142,7 @@ export const skills = [
       "GraphQL",
       "PostgreSQL",
       "Python / Django",
+      "Java",
     ],
   },
   {
@@ -154,6 +156,7 @@ export const skills = [
       "Detox",
       "Storybook",
       "Docker",
+      "Kubernetes",
       "GCP",
     ],
   },
@@ -186,7 +189,7 @@ export const featuredProject: Project = {
     "https://github.com/prateekchachra/react-native-audio-effects/blob/main/docs/API.md",
   npmUrl: "https://www.npmjs.com/package/react-native-audio-effects",
   status: "Currently building",
-  version: "v1.0.1 on npm · v2 in development",
+  version: "v1.0.1 on npm · ~520 downloads a month · v2 in development",
   tagline: "Real-time audio effects, generators and plugin-style controls for React Native",
   summary:
     "A native audio library for React Native's New Architecture. Load a sound, build an effect chain, and tweak it while it plays, with controls generated from the same parameter definitions the DSP reads, so a knob can never disagree with the effect behind it.",
@@ -221,6 +224,7 @@ export const projects: Project[] = [
       "The agent runs server-side in a Supabase Edge Function that rejects non-supervisors, so no model API key ever ships inside the app bundle.",
       "Provider-agnostic model layer (Gemini, Claude, or any OpenAI-compatible endpoint) behind one interface, with a CLI, an eval set and tests sharing a single copy of the agent code with the app.",
       "Anonymous submissions (each musician appears as e.g. Artist 877C), role-locked auth, clearance checks on every pick, and silent blocking so supervisors can stop accepting without signalling it.",
+      "22 automated tests, run from the CLI against the same copy of the agent code the app ships with.",
     ],
     stack: ["React Native (Expo)", "Supabase", "PostgreSQL", "Edge Functions", "TypeScript"],
   },
@@ -236,6 +240,22 @@ export const openSource = [
     repo: "doublesymmetry/react-native-track-player",
     contribution: "Bug fixes",
     url: "https://github.com/doublesymmetry/react-native-track-player/pull/2376",
+  },
+];
+
+export type Talk = {
+  event: string;
+  location: string;
+  topic: string;
+  year: string;
+};
+
+export const talks: Talk[] = [
+  {
+    event: "Primavera Pro",
+    location: "Barcelona",
+    topic: "Speaker, on AI",
+    year: "2026",
   },
 ];
 
